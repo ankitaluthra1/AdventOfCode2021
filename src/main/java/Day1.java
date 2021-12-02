@@ -1,3 +1,5 @@
+import utils.MyFileReader;
+
 import java.util.List;
 
 public class Day1 {
@@ -40,5 +42,4 @@ public class Day1 {
                 return incrementCount;
         }
     }
-
 }
