@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class MyFileReader {
+public class InputFileReader {
 
     public static List<String> getInput(String filename) {
         List<String> lines = null;

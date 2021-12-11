@@ -1,11 +1,11 @@
-import utils.MyFileReader;
+import utils.InputFileReader;
 
 import java.util.List;
 
 public class Day1 {
 
     public static void main(String[] args) {
-        List<String> input = MyFileReader.getInput("day-1-first-input");
+        List<String> input = InputFileReader.getInput("day-1-first-input");
         Day1 day1 = new Day1();
         int incrementCount = day1.getSingleIncrementCount(input);
         int incrementSumCount = day1.getSumIncrementCount(input);

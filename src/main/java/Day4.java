@@ -1,4 +1,4 @@
-import utils.MyFileReader;
+import utils.InputFileReader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -109,7 +109,7 @@ public class Day4 {
 
     public static void main(String[] args) {
 
-        List<String> lines = MyFileReader.getInput("day-4-input");
+        List<String> lines = InputFileReader.getInput("day-4-input");
         Day4 day4 = new Day4();
         day4.firstFinalScore(lines);
     }

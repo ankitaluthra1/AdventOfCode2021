@@ -1,4 +1,4 @@
-import utils.MyFileReader;
+import utils.InputFileReader;
 
 import java.util.*;
 
@@ -95,7 +95,7 @@ public class Day5 {
 
     public static void main(String[] args) {
 
-        List<String> inputs = MyFileReader.getInput("day-5-input");
+        List<String> inputs = InputFileReader.getInput("day-5-input");
 
         Day5 day5 = new Day5();
         List<Line> allLines = day5.getAllLines(inputs);

@@ -1,4 +1,4 @@
-import utils.MyFileReader;
+import utils.InputFileReader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +82,7 @@ public class Day2 {
     public static void main(String[] args) {
         Day2 day2 = new Day2();
         List<Instruction> instructions = new ArrayList<>();
-        List<String> input = MyFileReader.getInput("day-2-input");
+        List<String> input = InputFileReader.getInput("day-2-input");
         for (String current : input){
             String direction = current.split(" ")[0];
             String value = current.split(" ")[1];

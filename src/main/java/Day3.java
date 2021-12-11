@@ -1,4 +1,4 @@
-import utils.MyFileReader;
+import utils.InputFileReader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class Day3 {
 
     public static void main(String[] args) {
 
-        List<String> input = MyFileReader.getInput("day-3-input");
+        List<String> input = InputFileReader.getInput("day-3-input");
         Day3 day3 = new Day3();
         day3.powerConsumption(input);
         day3.lifeSupportRating(input);

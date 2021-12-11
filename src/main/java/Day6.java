@@ -1,10 +1,10 @@
-import utils.MyFileReader;
+import utils.InputFileReader;
 
 public class Day6 {
 
 
     public static void main(String[] args) {
-        String inputArr[] = MyFileReader.getInput("day-6-input").get(0).split(",");
+        String inputArr[] = InputFileReader.getInput("day-6-input").get(0).split(",");
         Day6 day6 = new Day6();
 
         long[] fishes = new long[9];
