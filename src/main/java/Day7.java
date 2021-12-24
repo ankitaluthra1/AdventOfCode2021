@@ -1,7 +1,8 @@
 import utils.InputFileReader;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Day7 {
 
@@ -10,23 +11,51 @@ public class Day7 {
 
         String[] inputArr = InputFileReader.getInput("day-7-input").get(0).split(",");
         Day7 day7 = new Day7();
-        Set<Integer> set = new HashSet<>();
+        List<Integer> inputList = new ArrayList<>();
 
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
         for (int i = 0; i < inputArr.length; i++) {
-            int temp = Integer.parseInt(inputArr[i]);
-            max = max > temp ? max : temp;
-            min = min < temp ? min : temp;
-            set.add(temp);
+            inputList.add(Integer.parseInt(inputArr[i]));
         }
+        day7.solveFirstPart(inputList);
+        day7.solveSecondPart(inputList);
+    }
 
-        for (int i = min; i <= max; i++) {
-            for (int j = min; j < max;j++){
-
-            }
+    private void solveSecondPart(List<  Integer> inputList) {
+        int mean = findMean(inputList);
+        int sum = 0;
+        for (int i : inputList) {
+            sum = sum + getFuelUsed(mean, i);
         }
+        System.out.println(sum);
+    }
 
+    private int findMean(List<Integer> inputList) {
+        int sum = inputList.stream().reduce(Integer::sum).get();
+        System.out.println(sum);
+        System.out.println(inputList.size());
+        int mean = (sum) / inputList.size();
+        System.out.println(mean +1);
+        return mean+1;
+    }
+
+    private int getFuelUsed(int mean, int i) {
+        int diff  = Math.abs(mean - i);
+        return (diff * (diff + 1))/2;
+
+    }
+
+    private void solveFirstPart(List<Integer> inputList) {
+        int median = findMedian(inputList);
+        int sum = 0;
+        for (int i : inputList) {
+            sum = sum + (Math.abs(median - i));
+        }
+        System.out.println(sum);
+    }
+
+    private int findMedian(List<Integer> inputList) {
+        List<Integer> sortedList = inputList.stream().sorted().collect(Collectors.toList());
+        return sortedList.get(sortedList.size() / 2);
     }
 
 }
