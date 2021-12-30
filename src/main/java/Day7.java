@@ -21,21 +21,30 @@ public class Day7 {
     }
 
     private void solveSecondPart(List<  Integer> inputList) {
-        int mean = findMean(inputList);
-        int sum = 0;
+        int mean1 = findLowMean(inputList);
+        int mean2 = findHighMean(inputList);
+        int lowSum = 0;
         for (int i : inputList) {
-            sum = sum + getFuelUsed(mean, i);
+            lowSum = lowSum + getFuelUsed(mean1, i);
         }
-        System.out.println(sum);
+
+        int highSum = 0;
+        for (int i : inputList) {
+            highSum = highSum + getFuelUsed(mean2, i);
+        }
+        System.out.println(Math.min(lowSum,highSum));
     }
 
-    private int findMean(List<Integer> inputList) {
+    private int findHighMean(List<Integer> inputList) {
         int sum = inputList.stream().reduce(Integer::sum).get();
-        System.out.println(sum);
-        System.out.println(inputList.size());
         int mean = (sum) / inputList.size();
-        System.out.println(mean +1);
         return mean+1;
+    }
+
+    private int findLowMean(List<Integer> inputList) {
+        int sum = inputList.stream().reduce(Integer::sum).get();
+        int mean = (sum) / inputList.size();
+        return mean;
     }
 
     private int getFuelUsed(int mean, int i) {

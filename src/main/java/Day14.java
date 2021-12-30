@@ -44,7 +44,7 @@ public class Day14 {
             givenMap.put(key, value);
         }
         day14.solve(input, 4);
-        //day14.solve(input, 40);
+        day14.solve(input, 40);
     }
 
     private void solve(String input, int steps) {
